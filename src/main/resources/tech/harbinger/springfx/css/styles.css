@@ -1,0 +1,72 @@
+.root{
+    -fx-focus-color: #0b3b52;
+    -fx-background-color: #131518;
+/*linear-gradient(to bottom right, #2c3e50, #1b2a31);*/
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-font: 14px 'Glorious Free';
+}
+
+.button {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: -fx-focus-color;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-text-fill: white;
+    -fx-border-color: #424346;
+    -fx-border-width: 1;
+    -fx-background-color: transparent;
+}
+
+.text-field:focused {
+    -fx-border-width: 2;
+    -fx-border-color: -fx-focus-color;
+}
+
+
+/** Login */
+.app-title {
+    -fx-font: 36px 'Glorious Free';
+    -fx-padding: 15 0 15 0;
+}
+
+
+/** Menubar */
+.menubar {
+    -fx-background-color: #282828;
+    -fx-pref-height: 45px;
+}
+
+.menubar > Menu, .menubar > MenuItem {
+    -fx-padding: 0 10 0 10;
+    -fx-font: 18px 'Glorious Free';
+    -fx-text-fill: #888585;
+    -fx-background-color: transparent;
+}
+
+.menubar > Button {
+    -fx-background-color: transparent;
+}
+
+.menubar > Menu:hover {
+    -fx-text-fill: #FFFFFF;
+}
+
+.menubar > .active {
+    -fx-font: 22;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-color: -fx-focus-color;
+}
+
+.sidebarMenu > .tree-view, .sidebarMenu .tree-cell{
+    -fx-background-color: rgba(44, 62, 80, 0);
+    -fx-text-fill: #ffffff;
+}
+

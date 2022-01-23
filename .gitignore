@@ -1,0 +1,11 @@
+# Log File
+logging.log
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore IDE project directory
+.idea

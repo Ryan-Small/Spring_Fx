@@ -1,0 +1,20 @@
+{
+    "links": [
+        {
+            "text":  "Root",
+            "icon": "icon",
+            "children": [
+                {
+                    "text": "Submenu 1",
+                    "icon": "icon-sub1",
+                    "fxml": "fxml-sub1"
+                },
+                {
+                    "text": "Submenu 2",
+                    "icon": "icon-sub2",
+                    "fxml": "fxml-sub2"
+                }
+            ]
+        }
+    ]
+}

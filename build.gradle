@@ -1,0 +1,50 @@
+plugins {
+    id "java"
+    id "application"
+    id "org.openjfx.javafxplugin" version "0.0.10"
+    id "org.springframework.boot" version "2.5.6"
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+}
+
+group = "tech.harbinger"
+version = "1.0.0"
+sourceCompatibility = JavaVersion.VERSION_17
+
+application {
+    mainClass = "tech.harbinger.springfx.SpringFxApplication"
+}
+
+javafx {
+    version = "17"
+    modules = [ "javafx.controls", "javafx.fxml" ]
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter"
+
+    implementation "de.jensd:fontawesomefx:8.9"
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+
+    implementation 'ch.qos.logback:logback-core:1.2.10'
+    implementation 'ch.qos.logback:logback-classic:1.2.10'
+    implementation 'org.slf4j:slf4j-api:1.7.33'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
+
+processResources.doLast {
+    ant.propertyfile(file: "build/resources/main/application.properties") {
+        entry(key: "application.name", value: "$rootProject.name", operation: "=")
+        entry(key: "application.version", value: "$rootProject.version", operation: "=")
+    }
+}
+
+task gatherLibs(group: "build", type: Copy, dependsOn: "build") {
+    duplicatesStrategy = DuplicatesStrategy.WARN
+    from configurations.runtimeClasspath
+    into "build/libs"
+}
